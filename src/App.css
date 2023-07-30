@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #241571;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  position: fixed;
+  display: flex;
+  flex-direction: row;  
+  width: 100%;
+}
+
+.Name{
+  flex: 1;
+  padding-left: 10%;
+}
+
+.Contacts{
+  flex: 2;
+  padding-right: 5%;
+}
+
+.App-main-body1{
+  padding: 5%;
+  color: #241571;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Main body menu*/
+.App-sub-main-body11{ 
+  flex: 1;
+  padding: 5%;
+  padding-left: 8%;
+  font-size: calc(10px + 2vmax);
+}
+/*Main image*/
+.App-sub-main-body12{
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15%;
+}
+
+.App-footer{
+  background-color: #241571;
+  padding-left: 40%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.link{
+  text-decoration: none;
+  color: #241571;
+}
