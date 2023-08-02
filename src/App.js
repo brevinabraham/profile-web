@@ -74,6 +74,17 @@ function App1() {
                     data:investmentData.tickerList.trueCurrValue,backgroundColor:investmentData.tickerList.colour,borderColor: investmentData.tickerList.colour, borderWidth:0
                     }]
                   }}
+                  options={{
+                    plugins:{
+                      legend:{
+                        labels:{
+                          font:{
+                            size:'15vw'
+                          }
+                        }
+                      }
+                    }
+                  }}
                 />
               </div>):
               (<img src = {IconBatman} alt = 'WHERE IS SHE!!'style={{ width: '15vw', height: 'auto' }}/>)
