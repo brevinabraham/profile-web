@@ -46,15 +46,15 @@ body {
     font-size: 150%;
     padding-top: 45vh;
   }
-  35% {
+  58% {
     font-size: 150%;
     padding-top: 45vh;
   }
-  45%{
+  65%{
     font-size: 150%;
     padding-top: 55vh;
   }
-  50% {
+  70% {
     font-size: 150%;
     padding-top: 45vh;
   }
@@ -101,14 +101,14 @@ body {
   0% {
     padding-bottom: 55vh;
   }
-  35% {
+  58% {
     padding-bottom: 55vh;
   }
-  45%{
+  65%{
     padding-bottom: 65vh;
   }
-  50% {
-    padding-bottom: 55vh;
+  70% {
+    padding-bottom: 45vh;
   }
 }
 

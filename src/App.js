@@ -32,7 +32,7 @@ function App1() {
           const blue = Math.random()*255
           investmentDataExtracted.tickerList.colour.push(`rgb(${red},${green},${blue})`)
         }
-        setShowChart(true)
+        setShowChart((prev) => !prev)
         setInvestmentData(investmentDataExtracted)
       })
       .catch((error) => {
