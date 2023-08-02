@@ -17,16 +17,16 @@ function App1() {
       .then((response) => response.json())
       .then((data) => {
         const decodedDataTickers = JSON.parse(JSON.parse(atob(data.tickerList)));
-        const decodedTotRtn = JSON.parse(JSON.parse(atob(data.totalRtn)));
-        const decodedtotalRtnPercentage = JSON.parse(JSON.parse(atob(data.totalRtnPercentage)));
+        const decodedTotRtn = Number(JSON.parse(JSON.parse(atob(data.totalRtn)))).toFixed(2);
+        const decodedtotalRtnPercentage = Number(JSON.parse(JSON.parse(atob(data.totalRtnPercentage)))).toFixed(2);
         const investmentDataExtracted = {'tickerList':{'ticker': [],'trueInitValue': [],'totRtn': [],'trueCurrValue': [],'perPie': [],'perTotRtn': [],'colour':[]},'totalRtn':decodedTotRtn,'totalRtnPercentage':decodedtotalRtnPercentage}
         for (let i = 0; i < Object.keys(decodedDataTickers.ticker).length; i++) {
           investmentDataExtracted.tickerList.ticker.push(decodedDataTickers.ticker[i])
-          investmentDataExtracted.tickerList.trueInitValue.push(decodedDataTickers.trueInitValue[i])
-          investmentDataExtracted.tickerList.totRtn.push(decodedDataTickers.totRtn[i])
-          investmentDataExtracted.tickerList.trueCurrValue.push(decodedDataTickers.trueCurrValue[i])
-          investmentDataExtracted.tickerList.perPie.push(decodedDataTickers.perPie[i])
-          investmentDataExtracted.tickerList.perTotRtn.push(decodedDataTickers.perTotRtn[i])
+          investmentDataExtracted.tickerList.trueInitValue.push(Number(decodedDataTickers.trueInitValue[i]).toFixed(2))
+          investmentDataExtracted.tickerList.totRtn.push(Number(decodedDataTickers.totRtn[i]).toFixed(2))
+          investmentDataExtracted.tickerList.trueCurrValue.push(Number(decodedDataTickers.trueCurrValue[i]).toFixed(2))
+          investmentDataExtracted.tickerList.perPie.push(Number(decodedDataTickers.perPie[i]).toFixed(2))
+          investmentDataExtracted.tickerList.perTotRtn.push(Number(decodedDataTickers.perTotRtn[i]).toFixed(2))
           const red = Math.random()*255
           const green = Math.random()*255
           const blue = Math.random()*255
@@ -67,8 +67,8 @@ function App1() {
           <div className='App-sub-main-body12'>
             {
               showChart ? 
-              (<div className='App-sub-main-body12-pie-chart'>
-                <h2>Total Return: £{Number(investmentData.totalRtn).toFixed(2)} (+{Number(investmentData.totalRtnPercentage).toFixed(2)}%)</h2>
+              (<div className='App-sub-main-body12-img'>
+                <h2>Total Return: £{investmentData.totalRtn} (+{investmentData.totalRtnPercentage}%)</h2>
                 <Pie data = {{
                   labels: investmentData.tickerList.ticker, datasets:[{
                     data:investmentData.tickerList.trueCurrValue,backgroundColor:investmentData.tickerList.colour,borderColor: investmentData.tickerList.colour, borderWidth:0
@@ -86,6 +86,7 @@ function App1() {
                     }
                   }}
                 />
+                <h2>Total Portfolio: £{Number((investmentData.totalRtn/investmentData.totalRtnPercentage)*100).toLocaleString('en-GB')}</h2>
               </div>):
               (<img src = {IconBatman} alt = 'WHERE IS SHE!!'style={{ width: '15vw', height: 'auto' }}/>)
             }

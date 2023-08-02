@@ -84,10 +84,26 @@ body {
   padding-left: 15%;
 }
 
-.App-sub-main-body12-pie-chart{
-  width: 25vw;
+.App-sub-main-body12-img{
+  width: 20vw;
   font-size: large;
+  animation: slideInFromLeft 0.75s;
 }
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translate3d(-25%, 0, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+
+
 .App-footer{
   background-color: #241571;
   padding-left: 40%;
