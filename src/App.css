@@ -4,7 +4,14 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  animation: bodyexpand 0.5s;
 }
+ @keyframes bodyexpand {
+  0% {
+    height: 0vh;
+    padding-bottom: 0%;
+  }
+ }
 
 .App{
   display: flex;
@@ -25,11 +32,32 @@ body {
 .Name{
   flex: 1;
   padding-left: 10%;
+  animation: openupheader 1s;
 }
 
 .Contacts{
   flex: 2;
   padding-right: 5%;
+  animation: openupheader 1s;
+}
+
+@keyframes openupheader {
+  0% {
+    font-size: 150%;
+    padding-top: 45vh;
+  }
+  35% {
+    font-size: 150%;
+    padding-top: 45vh;
+  }
+  45%{
+    font-size: 150%;
+    padding-top: 55vh;
+  }
+  50% {
+    font-size: 150%;
+    padding-top: 45vh;
+  }
 }
 
 .App-main-body1{
@@ -56,15 +84,36 @@ body {
   padding-left: 15%;
 }
 
+.App-sub-main-body12-pie-chart{
+  width: 25vw;
+}
 .App-footer{
   background-color: #241571;
   padding-left: 40%;
   color: white;
   justify-content: center;
   align-items: center;
+  height: 10vh;
+  animation: opendownfooter 1s;
+} 
+
+@keyframes opendownfooter {
+  0% {
+    padding-bottom: 55vh;
+  }
+  35% {
+    padding-bottom: 55vh;
+  }
+  45%{
+    padding-bottom: 65vh;
+  }
+  50% {
+    padding-bottom: 55vh;
+  }
 }
 
 .link{
   text-decoration: none;
   color: #241571;
 }
+
